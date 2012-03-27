@@ -1,0 +1,103 @@
+<!doctype html> 
+<!-- RIGHT -->
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>All I Want for Christmas Is...</title>
+
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="css/styles.css"/>
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	<div data-role="page" id="home" data-theme="d">	
+			<div data-role="header" data-position="fixed" data-theme="c">
+				<!--<h5>All I Want for Christmas Is...</h5>-->
+				<img src="images/main-title.gif"/>
+			</div><!-- /header -->
+			<div class="cta"id="cta">
+			<img src="images/coa.gif" id="img"/>
+			</div>
+			<div data-role="content">	
+				<ul data-role="listview">
+					<li><a href="additem.html" data-ajax="false">
+						<h3>Add Item</h3>
+						<p>Add an item to your list.</p>
+						<img src="images/add-thumb.gif"/>
+					</a></li>
+					<li><a href="#ideas">
+						<h3>Gift Ideas</h3>
+						<p>Need some inspiration?</p>
+						<img src="images/gift.gif"/>
+					</a></li>	
+				</ul>	
+		
+			</div><!-- /content -->
+			
+			<div data-role="footer" data-position="fixed" data-id="home"data-theme="a">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html" data-icon="home" class="ui-btn-active">Home</a></li>
+						<li><a href="#ideas" data-icon="star">Gift Ideas</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+
+					</ul>
+				</div>
+			</div><!-- /footer -->
+	
+	</div>
+	
+				<!-- /page -->
+		<div data-role="page" id="ideas" data-theme="d">	
+			<div data-role="header" data-position="fixed" data-theme="a">
+				<img src="images/main-title.gif"/>
+				<h1>Gift Ideas</h1>
+				
+			
+			</div><!-- /header -->
+
+		<div data-role="content">
+		<h1>COMING SOON!</h1>
+     	</div><!-- /content -->
+		
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="a">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html" data-icon="home">Home</a></li>
+						<li><a href="#ideas" data-icon="star" class="ui-btn-active">Gift Ideas</a></li>
+						<li><a href="additem.html" data-icon="plus" data-ajax="false">Add Item</a></li>
+					</ul>
+				</div>
+			</div><!-- /footer -->
+	
+	</div><!-- /page -->				
+</div>
+
+
+
+
+
+
+
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</body>
+</html>

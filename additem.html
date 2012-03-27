@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- Laura McCool RIGHT-->
+<!-- JQM Additem form and validation -->
+<html lang="en">
+	
+<head>
+	
+	<meta charset="utf-8"/>
+		
+	<title>All I Want for Christmas Is...</title>
+
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="css/styles.css"/>
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+	
+	
+</head
+    
+<body>
+	<header>
+		<hgroup>
+			<h1><a><img src="images/title2.gif"/></a></h1>
+		</hgroup>
+	</header>
+
+		<!-- /page -->
+		<!--<fieldset>
+				<legend>About this gift:</legend>
+				<ul id="errors"></ul>
+			    	<label for="category">Gift Category</label>
+			    	<select id="category">
+			    	    <option value="Choose">--Choose A Gift Category--</option>
+			    		<option value="Electronics">Electronics</option>
+			    	 	<option value="Entertainment">Entertainment</option>
+			    	 	<option value="Apparel">Apparel</option>
+			    	 	<option value="Music">Music</option>
+			    	 	<option value="Books">Books</option>
+			    	 	<option value="Etc">Etc</option>
+			    	</select>
+			    		<legend>What is it?:</legend>
+				<label for="comments"> Describe the gift:</label><textarea id="comments" placeholder="What is it?"></textarea>
+				<p></p>
+				<legend>Quantity:</legend>
+				<input type="range" id='amount'name="amount" min="1" max="100" />
+			    <p></p>
+			    <legend>Where to buy it:</legend>
+					<input type="radio" checked value="online" id="online" name="location" /><label for="online">Online</label>
+					<input type="radio" value="store" id="store" name="location" /><label for="store">In a store.</label>
+				<p></p>
+				<label for="store">Store Name:</label><input type="text" id="store" placeholder="ex: Zappos.com, Best Buy" />
+				<label for="url">Product URL (if applicable):</label><input type="url" id="url" />
+				<p></p>
+				<legend>Date Added:</legend> <input type="date" id="date" name="user_date" />
+			 </fieldset> -->	
+
+    <div data-role="page" id="gift" data-theme="d">	
+			<div data-role="header" data-position="fixed" data-theme="c">
+				<!--<h5>All I Want for Christmas Is...</h5>-->
+				<img src="images/main-title.gif"/>
+			</div>
+		
+		<form action="" method="post" id="giftForm">
+				<div data-role="fieldcontain">
+					<label for="comments">Describe the Gift:</label>
+					<textarea name="comments" id="comments" placeholder="What is it?" class="required"></textarea>
+				</div>		
+				
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup"> <!-- could be an issue -->
+			  			<legend>Choose a Gift Category</legend>
+							<input type="radio" name="gift-cat" id="gift-cat-1" value="choice-1" class="required"/>
+     							<label for="gift-cat-1">Electronics</label>
+     						<input type="radio" name="gift-cat" id="gift-cat-2" value="choice-2" />
+     							<label for="gift-cat-2">Entertainment</label>
+     						<input type="radio" name="gift-cat" id="gift-cat-3" value="choice-3" />
+     							<label for="gift-cat-3">Apparel</label>
+     						<input type="radio" name="gift-cat" id="gift-cat-4" value="choice-4" />
+     							<label for="gift-cat-4">Music</label>
+     						<input type="radio" name="gift-cat" id="gift-cat-5" value="choice-5" />
+     							<label for="gift-cat-5">Books</label>
+     						<input type="radio" name="gift-cat" id="gift-cat-6" value="choice-6" />
+     							<label for="gift-cat-6">Etc</label>
+     				 </fieldset>
+     			</div>
+     					     								
+				<label for="quantity">Quantity</label>
+					<input type="text" name="quantity" id="quantity" class="required number"/>
+					
+				<div data-role="fieldcontain">
+    				<fieldset data-role="controlgroup">
+	   				<legend>Where to buy it</legend>
+	   					<input type="checkbox" name="location" id="location-1" class="custom" value="online" />
+	   						<label for="location-1">Online</label>
+	   					<input type="checkbox" name="location" id="location-2" class="custom" value="store" />
+	   						<label for="location-2">In a store.</label>		
+     				</div>
+     				<div data-role="fieldcontain">		
+     				<label for="storename">Store Name</label>
+    						<input type="text" name="storename" id="storename" placeholder="ex: Zappos.com, Best Buy" class="required"  />
+    				</div>
+    				
+    				<div data-role="fieldcontain">
+    				<label for="url">URL (if applicable)</label>
+    						<input type="url" name="url" id="url" placeholder="website url or direct link to the item"  />
+    				</div>
+    				
+    				
+    				<div data-role="fieldcontain">	
+    				<label for="date">Date Added</label>
+						<input type="date" name="date" id="date" placeholder="MM-DD-YYYY" />
+					</div>	
+					<div data-role="fieldcontain"> 
+						 <input type="submit" value="Add it to the list!" data-theme="a" />
+						 <input type="reset" value="Reset Form" />
+					</div>
+			
+	</form>
+		<nav1>
+			<a href="#" id="displayData">View Your List</a>
+			<a href="#" id="clear"> Delete Your List</a>
+			<a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
+		</nav1>
+		
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="a">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="index.html" data-icon="home">Home</a></li>	
+					</ul>
+				</div>
+		</div>
+</div>
+		<!--<script src="js/json.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>-->	
+	
+	
+<!-- jQuery - required for jQuery Mobile -->
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+    <!-- My JS -->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+	
+</html>

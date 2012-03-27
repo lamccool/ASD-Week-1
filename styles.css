@@ -1,0 +1,66 @@
+/* 
+title: form.html Styles
+by Laura McCool
+for: CSS Selectors
+*/
+
+h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 2px dashed #e22828;
+	font-family: "century gothic";
+	color: #e22828;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+h2 {
+	font-family: "century gothic", Arial, Times;
+	text-align: center;
+}
+
+body {
+		background-color: #72b035;
+		font-family: "century gothic", Arial, Times;
+}
+
+label { 
+	font-family: "century gothic", Arial, Times;
+	color: #ffffff;
+}
+
+li {
+	display: block;
+	font-family: "century gothic", Arial, Times;
+	color: #ffffff;
+}
+
+p {
+	font-family: "century gothic", Arial, Times;
+	color: #ffffff;
+	text-align: center;
+	letter-spacing: ;
+}
+
+legend {
+	font-family: "century gothic", Arial, Times;
+	color: #ffffff;
+	font-weight: bold
+}
+
+a:hover {color: #ffffff; outline: none;}
+a:link {color: #ffffff; outline: none;}
+a:visited {color: #ffffff; outline: none;}
+
+nav{ 
+	padding: 5px;
+	outline: 1px dashed #ffffff;
+	background-color: #e22828;
+	font-family: "century gothic", Arial, Times;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+
