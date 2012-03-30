@@ -15,7 +15,7 @@ $(document).ready(function(){
 		}
 	});
 
-$('window').bind("DOMContentLoaded", function(){
+$('#window').bind("DOMContentLoaded", function(){
 	function $(x){
 		var theElement = $('#theElement'); 
 		return theElement;
@@ -144,7 +144,7 @@ $('window').bind("DOMContentLoaded", function(){
 		editLink.href = "#";
 		editLink.key = key;
 		var editText ="Edit List";
-		editLink.bind("click", editItem);
+		$('#editLink').bind("click", editItem);
 		//editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		$('linksLi').append('editLink');
@@ -158,7 +158,7 @@ $('window').bind("DOMContentLoaded", function(){
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Item"
-		deleteLink.bind("click", deleteItem);
+		$('#deleteLink').bind("click", deleteItem);
 		//deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		$('linksLi').append('deleteLink');
@@ -284,10 +284,10 @@ $('window').bind("DOMContentLoaded", function(){
 	makeCats();
 	//set link and click events
 	var displayData = $('displayData');
-	displayData.addEventListener("click", getData);
+	$('#displayData').bind("click", getData);
 	var clearData =$('clear');
-	clearData.addEventListener("click", clearLocal);
+	$('#clearData').bind("click", clearLocal);
 	var save = $('submit');
-	save.addEventListener("click", validate);
+	$('#save').bind("click", validate);
 
 });
