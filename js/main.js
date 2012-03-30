@@ -17,10 +17,9 @@ $(document).ready(function(){
 
 });
 
-
-/*window.addEventListener ("DOMContentLoaded", function(){
+window.addEventListener ("DOMContentLoaded", function(){
 	function $(x){
-		var theElement = document.getElementById(x);
+		var theElement = $('#theElement'); 
 		return theElement;
 	}
 	//create select field element and populate it with options.
