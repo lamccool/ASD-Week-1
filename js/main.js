@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 
 
-window.addEventListener ("DOMContentLoaded", function(){
+$('window').bind("DOMContentLoaded", function(){
 	function $(x){
 		var theElement = $('#theElement'); 
 		return theElement;
