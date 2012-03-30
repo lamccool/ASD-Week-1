@@ -15,8 +15,6 @@ $(document).ready(function(){
 		}
 	});
 
-
-
 $('window').bind("DOMContentLoaded", function(){
 	function $(x){
 		var theElement = $('#theElement'); 
@@ -52,14 +50,14 @@ $('window').bind("DOMContentLoaded", function(){
 		switch(n){
 			case "on":
 				$('giftForm').hide();
-				$('clear').css(display: 'inline');
+				$('clear').css('display','inline');
 				$('displayData').hide();
-				$('addNew').css(display: 'inline');
+				$('addNew').css('display','inline');
 				break;
 			case "off":
 				$('giftForm').show();
-				$('clear').css(display: 'inline');
-				$('displayData').css(display: 'inline');
+				$('clear').css('display', 'inline');
+				$('displayData').css('display', 'inline');
 				$('addNew').hide();
 				$('items').hide();
 				break;
@@ -243,8 +241,8 @@ $('window').bind("DOMContentLoaded", function(){
 		//Reset Error Message
 		errMsg.innerHTML ="";
 		$('#getCategory').css({border: '1px solid black'});
-		$('#getComments').css({border = '1px solid black'});
-		$('#getAmount').css({border = '1px solid black'});
+		$('#getComments').css({border: '1px solid black'});
+		$('#getAmount').css({border: '1px solid black'});
 		
 		//Get Error Messages
 		var messageAry = [];
@@ -258,7 +256,7 @@ $('window').bind("DOMContentLoaded", function(){
 		//Comments validation
 		if (getComments.value === ""){
 			var commentsError = "Please include your item.";
-			$('#getComments').css({border = '1px solid red'});
+			$('#getComments').css({border: '1px solid red'});
 			messageAry.push(commentsError);
 		}
 		
@@ -277,13 +275,12 @@ $('window').bind("DOMContentLoaded", function(){
 			storeData(this.key);
 		}
 
-	}
+	};
 	
 	//var defaults
 	var giftCategory = ["--Choose A Gift Category--", "Electronics", "Entertainment", "Apparel", "Music", "Books", "Etc"],
-		locationValue
+		locationValue,
 		errMsg = $('errors');
-	;
 	makeCats();
 	//set link and click events
 	var displayData = $('displayData');
@@ -294,7 +291,3 @@ $('window').bind("DOMContentLoaded", function(){
 	save.addEventListener("click", validate);
 
 });
-
-
-
-

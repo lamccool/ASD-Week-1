@@ -53,7 +53,7 @@ $("#giftForm").validate({
 
 // Edit data
 
-/*function editItem(id) {
+function editItem(id) {
     var itemId = id;
 	var value = localStorage.getItem(itemId);
 	value = value.split(',');
@@ -95,7 +95,7 @@ $("#giftForm").validate({
     alert("Your List Edited!");
     });
 
-}*/
+}
 
 //Delete an Item
 
