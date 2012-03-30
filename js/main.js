@@ -50,3 +50,31 @@ $("#giftForm").validate({
         console.log("Call Action");
     }
 });
+
+// Edit data
+
+function editItem(id) {
+    var itemId = id;
+	var value = localStorage.getItem(itemId);
+	value = value.split(',');
+	toggleControls("off");
+    var comments = value[0];
+    var quantity = value[1];
+    var gift-cat = value[2];
+    var location = value[3];
+    var storename = value[4];
+	var url = value[5];
+	var date = value[6];
+
+
+	$("#comments").val(comments);
+	$("#quantity"). val(quantity);
+	$("#gift-cat").val(gift-cat);
+	$("#location"). val(location);
+	$("#storename").val(storename);
+	$("#url").val(url);
+	$("#date").val(date);
+	
+	var editButton = $('#edit-item-button').css('display', 'block');
+    var subresButtons = $('#submit-reset-buttons').css('display', 'none');
+    var itemList = $('#list').css('display', 'none');
