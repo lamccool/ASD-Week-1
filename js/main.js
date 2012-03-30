@@ -27,11 +27,11 @@ window.addEventListener ("DOMContentLoaded", function(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array of all form tags.
 			selectLi = $('select'),
 			makeSelect = $("select"); 
-			makeSelect.setAttribute("id", "category");
+			$('#makeSelect').attr("id", "category");
 		for (var i=0, j=giftCategory.length; i<j; i++){
 			 var makeOption = $('option');
 			 var optText = giftCategory[i];
-			 makeOption.setAttribute("value", optText);
+			 $('#makeOption').attr("value", optText);
 			 makeOption.innerHTML = optText;
 			 $('makeSelect').append('makeOption');
 		}
@@ -51,17 +51,17 @@ window.addEventListener ("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$('giftForm').style.display ="none";
-				$('clear').style.display ="inline";
-				$('displayData').style.display ="none";
-				$('addNew').style.display = "inline";
+				$('giftForm').hide();
+				$('clear').css(display: 'inline');
+				$('displayData').hide();
+				$('addNew').css(display: 'inline');
 				break;
 			case "off":
-				$('giftForm').style.display ="block";
-				$('clear').style.display ="inline";
-				$('displayData').style.display ="inline";
-				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				$('giftForm').show();
+				$('clear').css(display: 'inline');
+				$('displayData').css(display: 'inline');
+				$('addNew').hide();
+				$('items').hide();
 				break;
 			default:
 				return false;
@@ -103,11 +103,11 @@ window.addEventListener ("DOMContentLoaded", function(){
 			autoFillData();
 		}
 		var makeDiv = $('div');
-		makeDiv.setAttribute("id", "items");
+		$('#makeDiv').attr("id", "items");
 		var makeList = $('ul');
 		$('makeDiv').append('makeList');
 		$('document.body').append('makeDiv');
-		$('items').style.display = "block";
+		$('items').show();
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = $('li');
 			var linksLi = $('li');
@@ -242,23 +242,23 @@ window.addEventListener ("DOMContentLoaded", function(){
 		
 		//Reset Error Message
 		errMsg.innerHTML ="";
-		getCategory.style.border = "1px solid black";
-		getComments.style.border = "1px solid black";
-		getAmount.style.border = "1px solid black";
+		$('#getCategory').css({border: '1px solid black'});
+		$('#getComments').css({border = '1px solid black'});
+		$('#getAmount').css({border = '1px solid black'});
 		
 		//Get Error Messages
 		var messageAry = [];
 		//Category Validation
 		if (getCategory.value === "--Choose A Gift Category--"){
 			var categoryError = "Please choose a category.";
-			getCategory.style.border = "1px solid red";
+			$('#getCategory').css({border: '1px solid red'});
 			messageAry.push(categoryError);
 		}
 		
 		//Comments validation
 		if (getComments.value === ""){
 			var commentsError = "Please include your item.";
-			getComments.style.border = "1px solid red";
+			$('#getComments').css({border = '1px solid red'});
 			messageAry.push(commentsError);
 		}
 		
