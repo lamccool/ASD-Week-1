@@ -10,7 +10,7 @@ $(document).ready(function(){
 	rbform.validate({
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
-			var data = rbform.serializeArray();
+			var data = $('rbform').serializeArray();
 			parseGiftForm(data);
 		}
 	});
