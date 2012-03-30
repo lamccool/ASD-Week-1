@@ -15,7 +15,7 @@ $(document).ready(function(){
 		}
 	});
 
-});
+
 
 window.addEventListener ("DOMContentLoaded", function(){
 	function $(x){
@@ -26,14 +26,14 @@ window.addEventListener ("DOMContentLoaded", function(){
 	function makeCats (){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array of all form tags.
 			selectLi = $('select'),
-			makeSelect = document.createElement('select');
+			makeSelect = $("select"); 
 			makeSelect.setAttribute("id", "category");
 		for (var i=0, j=giftCategory.length; i<j; i++){
-			 var makeOption = document.createElement('option');
+			 var makeOption = $('option');
 			 var optText = giftCategory[i];
 			 makeOption.setAttribute("value", optText);
 			 makeOption.innerHTML = optText;
-			 makeSelect.appendChild(makeOption);
+			 $('makeSelect').append('makeOption');
 		}
 		//selectLi.appendChild(makeSelect);
 	}
@@ -102,66 +102,68 @@ window.addEventListener ("DOMContentLoaded", function(){
 			alert("There is no data in Local Storage so default data was added.");
 			autoFillData();
 		}
-		var makeDiv = document.createElement('div');
+		var makeDiv = $('div');
 		makeDiv.setAttribute("id", "items");
-		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
+		var makeList = $('ul');
+		$('makeDiv').append('makeList');
+		$('document.body').append('makeDiv');
 		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
-			var makeli = document.createElement('li');
-			var linksLi = document.createElement ('li');
-			makeList.appendChild(makeli);
+			var makeli = $('li');
+			var linksLi = $('li');
+			$('makeList').append('makeli');
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert string from local storage value back to an object by using JSON.parse
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement('ul');
-			makeli.appendChild(makeSubList);
+			var makeSubList = $('ul');
+			$('makeli').append('makeSubList');
 			getImage(obj.category[1], makeSubList);
 			for(var n in obj){
-				var makeSubli = document.createElement('li');
-				makeSubList.appendChild(makeSubli);
+				var makeSubli = $('li');
+				$('makeSubList').append('makeSubli');
 				var optSubText = obj[n][0]+" "+obj[n][1];
 				makeSubli.innerHTML = optSubText;
-				makeSubli.appendChild (linksLi);
+				$('makeSubli').append('linksLi');
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Edit and delete buttons for Local Storage
 		}
 	}
 	//Get image for the right category
 	function getImage(catName, makeSubList){
-		var imageLi = document.createElement('li');
-		makeSubList.appendChild(imageLi);
-		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src","images/"+ catName +".png");
-		imageLi.appendChild(newImg);
+		var imageLi = $('li');
+		$('makeSubList').append('imageLi');
+		var newImg = $('img');
+		var setSrc = $('#newImg').attr("src","images/"+ catName +".png");  
+		$('imageLi').append('newImg');
 	}
 	//Make Item Links Function
 	//Create edit and delete links for each stored item when displayed
 	
 	function makeItemLinks (key, linksLi){
 	//add edit single item link
-		var editLink = document.createElement ('a');
+		var editLink = $('a');
 		editLink.href = "#";
 		editLink.key = key;
 		var editText ="Edit List";
-		editLink.addEventListener("click", editItem);
+		editLink.bind("click", editItem);
+		//editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
-		linksLi.appendChild (editLink);
+		$('linksLi').append('editLink');
 		
 		//add line break
-		var breakTag = document.createElement('br');
-		linksLi.appendChild(breakTag);
+		var breakTag = $('br');
+		$('linksLi').append('breakTag');
 		
 		//delete single item link
-		var deleteLink = document.createElement('a');
+		var deleteLink = $('a');
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Item"
-		deleteLink.addEventListener("click", deleteItem);
+		deleteLink.bind("click", deleteItem);
+		//deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
-		linksLi.appendChild (deleteLink);
+		$('linksLi').append('deleteLink');
 	}
 	//Auto Populate Local Storage
 	function autoFillData(){
@@ -263,9 +265,9 @@ window.addEventListener ("DOMContentLoaded", function(){
 		//If there were errors display them on the screen
 		if(messageAry.length >= 1){
 			for(var i=0, j=messageAry.length; i < j; i++){
-				var txt = document.createElement('li');
+				var txt = $('li');
 				txt.innerHTML = messageAry[i];
-				errMsg.appendChild(txt);
+				$('errMsg').append('txt');
 			}	
 			e.preventDefault();
 			return false;	
@@ -291,7 +293,7 @@ window.addEventListener ("DOMContentLoaded", function(){
 	var save = $('submit');
 	save.addEventListener("click", validate);
 
-});*/
+});
 
 
 
