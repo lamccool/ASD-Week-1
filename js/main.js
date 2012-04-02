@@ -4,7 +4,7 @@
 
 var parseGiftForm = function(data){};
 
-$(document).ready(function(){
+$('#home').live('pageinit',function(){
 		
 	var rbform = $('#giftForm');	
 	rbform.validate({
