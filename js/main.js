@@ -16,10 +16,7 @@ $('#home').live('pageinit',function(){
 	});
 
 $('#window').bind("DOMContentLoaded", function(){
-	function $(x){
-		var theElement = $('#theElement'); 
-		return theElement;
-	}
+
 	//create select field element and populate it with options.
 	function makeCats (){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array of all form tags.
