@@ -246,7 +246,7 @@ var json = {
 		"category":["Category:", "Apparel"], 
 		"comments":["Gift Description:", "Betsy Johnson Blue Sunglasses"],
 		"amount":["Quantity:","1"],
-		"location":["Where To Buy:","Onlne"],
+		"location":["Where To Buy:","Online"],
 		"store":["Store Name:","Betsy Johnson"],
 		"url":["Product Url:","betsyjohnson.com"],
 		"date":["Date Added:","2011-11-21"]
