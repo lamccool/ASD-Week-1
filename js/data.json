@@ -166,8 +166,8 @@ var json = {
 		"comments":["Gift Description:", "Justified Season 2"],
 		"amount":["Quantity:","1"],
 		"location":["Where To Buy:","Online"],
-		"store":["Store Name:","Delias"],
-		"url":["Product Url:","delias.com"],
+		"store":["Store Name:","Amazon"],
+		"url":["Product Url:","amazon.com"],
 		"date":["Date Added:","2011-11-30"]
 		},
 		"gift20": {
