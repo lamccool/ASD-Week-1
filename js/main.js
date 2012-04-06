@@ -288,3 +288,38 @@ $('#window').bind("DOMContentLoaded", function(){
 	$('#save').bind("click", validate);
 
 });
+
+
+// DATA CALLS
+
+
+// JSON Data 
+	$('#jsonbutton').bind('click', function(){
+	$('#giftdata').empty();	
+    $('<p>').html('JSON IMPORT').appendTo('#giftdata');
+	$.ajax({
+		url: 'xhr/data.json',
+		type: 'GET',
+		dataType: 'json',
+		success: function(response){
+ 			for (var i=0, j=response.thegifts.length; i<j; i++){	
+      				var jdata = response.thegifts[i];	
+        			$(''+	
+	           		'<div class="designtitle">'+
+	           			'<h3>Category: '+ jdata.category +'</h3>'+
+						'<p>Gift Description: '+ jdata.comments +'</p>'+
+						'<p>Quantity: '+ jdata.amount +'</p>'+
+						'<p>Where to Buy: '+ jdata.location +'</p>'+
+						'<p>Store Name: '+ jdata.store +'</p>'+
+						'<p>Product URL: '+ jdata.url +'</p>'+
+						'<p>Date Added: '+ jdata.date +'</p>'+
+					'</div>'
+					).appendTo('#giftdata');
+	      console.log(response);
+	    	 }
+	
+	 	 	}	
+		 });
+		return false;	
+	+});
++});
