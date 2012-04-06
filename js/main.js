@@ -350,6 +350,7 @@ $('#window').bind("DOMContentLoaded", function(){
 						'<p>Store Name: '+ store +'</p>'+
 						'<p>Product URL: '+ url +'</p>'+
 						'<p>Date Added: '+ date +'</p>'+
+					'</div>'
  				  ).appendTo('#giftdata');
  				  console.log(xml);	
       		});
@@ -385,7 +386,6 @@ $('#window').bind("DOMContentLoaded", function(){
 					}
 					lines.push(gifts); 
 				}
-
 			}
 
 			for (var m=0; m<lines.length; m++){
@@ -402,8 +402,11 @@ $('#window').bind("DOMContentLoaded", function(){
 					'</div>'
 				).appendTo('#giftdata');
 			console.log(lines);	
-			}
-        }
-        });
-		return false;
-   });
+		    });
+	
+   		 }
+
+ 	 });
+	
+ 	return false;
+ });
