@@ -298,14 +298,14 @@ $('#window').bind("DOMContentLoaded", function(){
 	$('#giftdata').empty();	
     $('<p>').html('JSON IMPORT').appendTo('#giftdata');
 	$.ajax({
-		url: 'xhr/data.json',
+		url: 'js/data.json',
 		type: 'GET',
 		dataType: 'json',
 		success: function(response){
  			for (var i=0, j=response.thegifts.length; i<j; i++){	
       				var jdata = response.thegifts[i];	
         			$(''+	
-	           		'<div class="designtitle">'+
+	           		'<div class="gifttitle">'+
 	           			'<h3>Category: '+ jdata.category +'</h3>'+
 						'<p>Gift Description: '+ jdata.comments +'</p>'+
 						'<p>Quantity: '+ jdata.amount +'</p>'+
@@ -315,11 +315,95 @@ $('#window').bind("DOMContentLoaded", function(){
 						'<p>Date Added: '+ jdata.date +'</p>'+
 					'</div>'
 					).appendTo('#giftdata');
-	      console.log(response);
-	    	 }
+	      			console.log(response);
+	    	 	}
 	
 	 	 	}	
-		 });
+		});
 		return false;	
-	+});
-+});
+	});
+	
+// XML Data
+
+	$('#xmlbutton').bind('click', function(){
+		$('#giftdata').empty();
+		$('<p>').html('XML IMPORT').appendTo('#giftdata');
+		$.ajax({	
+			url: 'js/data.xml',
+			type: 'GET',	
+			dataType: 'xml',	
+			success: function(xml){
+			$(xml).find("design").each(function(){
+				var dname = $(this).find('dname').text();
+				var durl = $(this).find('durl').text();
+				var ddate = $(this).find('ddate').text();
+				var groups = $(this).find('groups').text();
+				var feature = $(this).find('feature').text();
+				var appeal = $(this).find('appeal').text();
+				var notes = $(this).find('notes').text();
+			$(''+    
+                '<div class="gifttitle">'+
+	           			'<h3>Category: '+ category +'</h3>'+
+						'<p>Gift Description: '+ comments +'</p>'+
+						'<p>Quantity: '+ amount +'</p>'+
+						'<p>Where to Buy: '+ location +'</p>'+
+						'<p>Store Name: '+ store +'</p>'+
+						'<p>Product URL: '+ url +'</p>'+
+						'<p>Date Added: '+ date +'</p>'+
+ 				  ).appendTo('#giftdata');
+ 				  console.log(xml);	
+      		});
+	
+   		 }
+
+ 	 });
+	
+ 	return false;
+ });
+ 	
+//CSV Data
+
+	$('#csvbutton').bind('click', function(){
+		$('#giftdata').empty();
+		$('<p>').html('CSV IMPORT').appendTo('#giftdata');	
+ 		$.ajax({
+			type: "GET",	
+	       	url: "js/data.csv",
+			dataType: "text",
+			success: function(data) {
+			var allTextLines = data.split(/\r\n|\n/);
+    		var headers = allTextLines[0].split(',');
+    		var lines = []; // main 
+
+			for (var i=1; i<allTextLines.length; i++) {
+				var data = allTextLines[i].split(',');
+				if (data.length == headers.length) {
+					var gifts = []; // blank
+
+					for (var j=0; j<headers.length; j++) {
+						gifts.push(data[j]); 
+					}
+					lines.push(gifts); 
+				}
+
+			}
+
+			for (var m=0; m<lines.length; m++){
+				var agift = lines[m];
+			$(''+
+					'<div class="gifttitle">'+
+						'<h3>Category: '+ agift[1] +'</h3>'+
+						'<p>Gift Description: '+ agift[2] +'</p>'+
+						'<p>Quantity: '+ agift[3] +'</p>'+
+						'<p>Where to Buy: '+ agift[4] +'</p>'+
+						'<p>Store Name: '+ agift[5] +'</p>'+
+						'<p>Product URL: '+ agift[6] +'</p>'+
+						'<p>Date Added: '+ agift[7] +'</p>'+
+					'</div>'
+				).appendTo('#giftdata');
+			console.log(lines);	
+			}
+        }
+        });
+		return false;
+   });
