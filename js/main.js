@@ -333,14 +333,14 @@ $('#window').bind("DOMContentLoaded", function(){
 			type: 'GET',	
 			dataType: 'xml',	
 			success: function(xml){
-			$(xml).find("design").each(function(){
-				var dname = $(this).find('dname').text();
-				var durl = $(this).find('durl').text();
-				var ddate = $(this).find('ddate').text();
-				var groups = $(this).find('groups').text();
-				var feature = $(this).find('feature').text();
-				var appeal = $(this).find('appeal').text();
-				var notes = $(this).find('notes').text();
+			$(xml).find("gift").each(function(){
+				var category = $(this).find('category').text();
+				var comments = $(this).find('comments').text();
+				var amount = $(this).find('amount').text();
+				var location = $(this).find('location').text();
+				var store = $(this).find('store').text();
+				var url = $(this).find('url').text();
+				var date = $(this).find('date').text();
 			$(''+    
                 '<div class="gifttitle">'+
 	           			'<h3>Category: '+ category +'</h3>'+
