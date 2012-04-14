@@ -333,7 +333,7 @@ $('#window').bind("DOMContentLoaded", function(){
 			type: 'GET',	
 			dataType: 'xml',	
 			success: function(xml){
-			$(xml).find("gift").each(function(){
+			$(xml).find("giftdata").each(function(){
 				var category = $(this).find('category').text();
 				var comments = $(this).find('comments').text();
 				var amount = $(this).find('amount').text();
