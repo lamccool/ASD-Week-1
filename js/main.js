@@ -356,15 +356,19 @@ $('#window').bind("DOMContentLoaded", function(){
       		});
 	
    		 }
-
  	 });
-	
-		var data = $.parseXML('giftdata');
-// wrap the XML in a jQuery object to make it easier to work with
+		var data = $.parseXML(giftdata);
 		var items = $( data );
 		items.find("item").each(function(){
    			var item = $(this);
-   			console.log("Name: ", item.find("name"));
+   			console.log("Category: ", item.find("category"));
+   			console.log("Gift Description: ", item.find("comments"));
+   			console.log("Quantity: ", item.find("amount"));
+   			console.log("Where to Buy: ", item.find("location"));
+   			console.log("Store Name: ", item.find("store"));
+   			console.log("Product URL: ", item.find("url"));
+   			console.log("Date Added: ", item.find("date"));
+   			 
 	});
  	return false;
  });
