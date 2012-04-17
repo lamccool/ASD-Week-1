@@ -15,8 +15,6 @@ $('#gift').live('pageinit',function(){
 		}
 	});
 
-$('#window').bind("DOMContentLoaded", function(){
-
 	//create select field element and populate it with options.
 	function makeCats (){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array of all form tags.
@@ -287,8 +285,6 @@ $('#window').bind("DOMContentLoaded", function(){
 	var save = $('submit');
 	$('#save').bind("click", validate);
 
-});
-
 
 // DATA CALLS
 
@@ -298,10 +294,11 @@ $('#window').bind("DOMContentLoaded", function(){
 	$('#giftdata').empty();	
     $('<p>').html('JSON IMPORT').appendTo('#giftdata');
 	$.ajax({
-		url: 'js/data.json',
+		url: 'js/stuff.js',
 		type: 'GET',
 		dataType: 'json',
 		success: function(response){
+			console.log(response);
  			for (var i=0, j=response.thegifts.length; i<j; i++){	
       				var jdata = response.thegifts[i];	
         			$(''+	
@@ -315,13 +312,14 @@ $('#window').bind("DOMContentLoaded", function(){
 						'<p>Date Added: '+ jdata.date +'</p>'+
 					'</div>'
 					).appendTo('#giftdata');
-	      			console.log(response);
-	    	 	}
 	
-	 	 	}	
-		});
-		return false;	
-	});
+	    	 	} //for loop
+	 	 	}, //function	
+	 	 	error: function(errormessage){
+	 	 	console.log("Error!" + errormessage);
+ 			}
+		}); //ajax	
+	}); //json button
 	
 // XML Data
 
@@ -333,45 +331,42 @@ $('#window').bind("DOMContentLoaded", function(){
 			type: 'GET',	
 			dataType: 'xml',	
 			success: function(xml){
-			$(xml).find("giftdata").each(function(){
+			console.log(xml);
+			//var data = $.parseXML(xml);
+			//console.log(data);
+			var items = $(xml);
+			items.find("item").each(function(){
+	   			var item = $(this);	
+		 		//$(xml).find("item").each(function(){
 				var category = $(this).find('category').text();
+				console.log(category);
 				var comments = $(this).find('comments').text();
 				var amount = $(this).find('amount').text();
 				var location = $(this).find('location').text();
 				var store = $(this).find('store').text();
 				var url = $(this).find('url').text();
 				var date = $(this).find('date').text();
-			$(''+    
-                '<div class="gifttitle">'+
-	           			'<h3>Category: '+ category +'</h3>'+
-						'<p>Gift Description: '+ comments +'</p>'+
-						'<p>Quantity: '+ amount +'</p>'+
-						'<p>Where to Buy: '+ location +'</p>'+
-						'<p>Store Name: '+ store +'</p>'+
-						'<p>Product URL: '+ url +'</p>'+
-						'<p>Date Added: '+ date +'</p>'+
-					'</div>'
- 				  ).appendTo('#giftdata');
- 				  console.log(xml);	
-      		});
+				$(''+    
+	                '<div class="gifttitle">'+
+		           			'<h3>Category: '+ category +'</h3>'+
+							'<p>Gift Description: '+ comments +'</p>'+
+							'<p>Quantity: '+ amount +'</p>'+
+							'<p>Where to Buy: '+ location +'</p>'+
+							'<p>Store Name: '+ store +'</p>'+
+							'<p>Product URL: '+ url +'</p>'+
+							'<p>Date Added: '+ date +'</p>'+
+						'</div>'
+	 				  ).appendTo('#giftdata');
+	 				  console.log(xml);	
+	      		//}); //closed xml.find
 	
-   		 }
- 	 });
-		var data = $.parseXML(giftdata);
-		var items = $( data );
-		items.find("item").each(function(){
-   			var item = $(this);
-   			console.log("Category: ", item.find("category"));
-   			console.log("Gift Description: ", item.find("comments"));
-   			console.log("Quantity: ", item.find("amount"));
-   			console.log("Where to Buy: ", item.find("location"));
-   			console.log("Store Name: ", item.find("store"));
-   			console.log("Product URL: ", item.find("url"));
-   			console.log("Date Added: ", item.find("date"));
-   			 
-	});
- 	return false;
- });
+   		 	}); // function close
+ 		 }, //success close
+ 		error: function(errormessage){
+ 			console.log("Error!" + errormessage);
+ 		}
+ 	}); //ajax
+ }); //closes xml button
  	
 //CSV Data
 
@@ -413,11 +408,10 @@ $('#window').bind("DOMContentLoaded", function(){
 					'</div>'
 				).appendTo('#giftdata');
 			console.log(lines);	
-		    });
-	
+		    } //closes for loop
    		 }
 
  	 });
-	
- 	return false;
  });
+ 
+ }); //gift close
