@@ -154,7 +154,7 @@ $('#window').bind("DOMContentLoaded", function(){
 		var deleteLink = $('a');
 		deleteLink.href = "#";
 		deleteLink.key = key;
-		var deleteText = "Delete Item"
+		var deleteText = "Delete Item";
 		$('#deleteLink').bind("click", deleteItem);
 		//deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
@@ -208,19 +208,19 @@ $('#window').bind("DOMContentLoaded", function(){
 	}
 	
 	function deleteItem(){
-		var ask = confirm("Are you sure you want to delete this item?")
+		var ask = confirm("Are you sure you want to delete this item?");
 		if (ask){
 			localStorage.removeItem(this.key);
 			alert("Item was deleted.");
 			window.location.reload();
 		}else{
-			alert("Item was NOT deleted.")
+			alert("Item was NOT deleted.");
 		}
 	}
 	
 	function clearLocal(){
 		if(localStorage.length === 0){
-			alert("There is no data to clear.")
+			alert("There is no data to clear.");
 		}else{ 
 			localStorage.clear();
 			alert("All items are deleted.");
@@ -356,15 +356,19 @@ $('#window').bind("DOMContentLoaded", function(){
       		});
 	
    		 }
-
  	 });
-	
-		var data = $.parseXML('giftdata');
-// wrap the XML in a jQuery object to make it easier to work with
+		var data = $.parseXML(giftdata);
 		var items = $( data );
 		items.find("item").each(function(){
    			var item = $(this);
-   			console.log("Name: ", item.find("name"));
+   			console.log("Category: ", item.find("category"));
+   			console.log("Gift Description: ", item.find("comments"));
+   			console.log("Quantity: ", item.find("amount"));
+   			console.log("Where to Buy: ", item.find("location"));
+   			console.log("Store Name: ", item.find("store"));
+   			console.log("Product URL: ", item.find("url"));
+   			console.log("Date Added: ", item.find("date"));
+   			 
 	});
  	return false;
  });
