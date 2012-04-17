@@ -16,7 +16,7 @@
         <amount>1</amount>
         <location>Online</location>
         <store>Keane Online Store</store>
-        <url>keanmusic.com</url>
+        <url>keanemusic.com</url>
         <date>2011-10-01</date>
     </item>
     
@@ -38,8 +38,7 @@
         <store>Williams Sonoma</store>
         <url>none</url>
         <date>2011-11-29</date>
-     </item>
-    
+     </item>    
     
      <item>
         <category>Apparel</category>
