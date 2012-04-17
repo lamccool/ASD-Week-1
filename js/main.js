@@ -4,7 +4,7 @@
 
 var parseGiftForm = function(data){};
 
-$('#home').live('pageinit',function(){
+$('#gift').live('pageinit',function(){
 		
 	var rbform = $('#giftForm');	
 	rbform.validate({
@@ -333,14 +333,14 @@ $('#window').bind("DOMContentLoaded", function(){
 			type: 'GET',	
 			dataType: 'xml',	
 			success: function(xml){
-			$(xml).find("design").each(function(){
-				var dname = $(this).find('dname').text();
-				var durl = $(this).find('durl').text();
-				var ddate = $(this).find('ddate').text();
-				var groups = $(this).find('groups').text();
-				var feature = $(this).find('feature').text();
-				var appeal = $(this).find('appeal').text();
-				var notes = $(this).find('notes').text();
+			$(xml).find("giftdata").each(function(){
+				var category = $(this).find('category').text();
+				var comments = $(this).find('comments').text();
+				var amount = $(this).find('amount').text();
+				var location = $(this).find('location').text();
+				var store = $(this).find('store').text();
+				var url = $(this).find('url').text();
+				var date = $(this).find('date').text();
 			$(''+    
                 '<div class="gifttitle">'+
 	           			'<h3>Category: '+ category +'</h3>'+
@@ -350,6 +350,7 @@ $('#window').bind("DOMContentLoaded", function(){
 						'<p>Store Name: '+ store +'</p>'+
 						'<p>Product URL: '+ url +'</p>'+
 						'<p>Date Added: '+ date +'</p>'+
+					'</div>'
  				  ).appendTo('#giftdata');
  				  console.log(xml);	
       		});
@@ -358,6 +359,13 @@ $('#window').bind("DOMContentLoaded", function(){
 
  	 });
 	
+		var data = $.parseXML('giftdata');
+// wrap the XML in a jQuery object to make it easier to work with
+		var items = $( data );
+		items.find("item").each(function(){
+   			var item = $(this);
+   			console.log("Name: ", item.find("name"));
+	});
  	return false;
  });
  	
@@ -385,7 +393,6 @@ $('#window').bind("DOMContentLoaded", function(){
 					}
 					lines.push(gifts); 
 				}
-
 			}
 
 			for (var m=0; m<lines.length; m++){
@@ -402,8 +409,11 @@ $('#window').bind("DOMContentLoaded", function(){
 					'</div>'
 				).appendTo('#giftdata');
 			console.log(lines);	
-			}
-        }
-        });
-		return false;
-   });
+		    });
+	
+   		 }
+
+ 	 });
+	
+ 	return false;
+ });
