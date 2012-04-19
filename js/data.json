@@ -1,5 +1,5 @@
 {"giftdata": 
-	{ category": "Electronics", "comments":"Digital Camera", "amount": "1","location":"Online", "store":"Amazon", "url":"amazon.com","date":"2011-12-01"},
+	{"category": "Electronics", "comments":"Digital Camera", "amount": "1","location":"Online", "store":"Amazon", "url":"amazon.com","date":"2011-12-01"},
 	{"category":"Entertainment", "comments":"Bluray","amount":"1","location":"Online","store":"Amazon", "url": "amazon.com", "date":"2011-11-27"},
 	{"category":"Apparel", "comments":"Jeans", "amount":"2", "location":"Online", "store":"Delias","url":"delias.com","date":"2011-11-30"},
 	{"category":"Music","comments":"Keane CD","amount":"1","location":"Store","store":"Keane Store","url":"keanemusic.com","date":"2011-10-01"},
