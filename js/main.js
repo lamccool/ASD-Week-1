@@ -294,13 +294,13 @@ $('#gift').live('pageinit',function(){
 	$('#giftdata').empty();	
     $('<p>').html('JSON IMPORT').appendTo('#giftdata');
 	$.ajax({
-		url: 'js/stuff.js',
+		url: 'js/data.json',
 		type: 'GET',
 		dataType: 'json',
 		success: function(response){
 			console.log(response);
- 			for (var i=0, j=response.thegifts.length; i<j; i++){	
-      				var jdata = response.thegifts[i];	
+ 			for (var i=0, j=response.giftdata.length; i<j; i++){	
+      				var jdata = response.giftdata[i];	
         			$(''+	
 	           		'<div class="gifttitle">'+
 	           			'<h3>Category: '+ jdata.category +'</h3>'+
