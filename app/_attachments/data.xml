@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <category>Electronics</category>
+        <comment>Digital Camera</comment>
+        <amount>1</amount>
+        <location>Online</location>
+        <store>Amazon</store>
+        <url>amazon.com</url>
+        <date>2011-12-01</date>
+    </item>
+    
+    <item>
+        <category>Music</category>
+        <comment> Keane: Hopes and Fears LP</comment>
+        <amount>1</amount>
+        <location>Online</location>
+        <store>Keane Online Store</store>
+        <url>keanemusic.com</url>
+        <date>2011-10-01</date>
+    </item>
+    
+    <item>
+        <category>Apparel</category>
+        <comment>Jeans</comment>
+        <amount>2</amount>
+        <location>Online</location>
+        <store>Delias</store>
+        <url>delias.com</url>
+        <date>2011-11-30</date>
+    </item>
+    
+     <item>
+        <category>Electronic</category>
+        <comment>Kitchen Aid Stand Mixer</comment>
+        <amount>1</amount>
+        <location>Store</location>
+        <store>Williams Sonoma</store>
+        <url>none</url>
+        <date>2011-11-29</date>
+     </item>    
+    
+     <item>
+        <category>Apparel</category>
+        <comment>Betsy Johnson Blue Sunglasses</comment>
+        <amount>1</amount>
+        <location>Online</location>
+        <store>Betsy Johnson</store>
+        <url>betsyjohnson.com</url>
+        <date>2011-11-21</date>
+     </item>
+    
+</items>
